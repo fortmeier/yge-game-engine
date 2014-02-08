@@ -14,6 +14,7 @@
 #include "YGEQuaternion.h"
 
 #include "YGEGraphicsCore.h"
+#include "YGEAudioCore.h"
 
 #include <list>
 
@@ -42,7 +43,8 @@ class YGESpace;
 
 class YGEEntity {
 private:	
-	friend class YGEGraphicsCore;
+	friend class YGEGraphics::YGEGraphicsCore;
+	friend class YGEAudio::YGEAudioCore;
 
 	/**
 	 * the children of the entity
@@ -94,8 +96,6 @@ private:
 	YGEMath::Vector3 oldPosition;
 	YGEMath::Vector3 newPosition;
 
-	friend class YGEGraphics::YGEGraphicsCore;
-	friend class YGEAudio::YGEAudioCore;
 	YGEMath::Vector3 interpolatedPosition;
 
 	long long timeOfOldPosition;
@@ -112,7 +112,6 @@ private:
 	YGEMath::Quaternion oldOrientation;
 	YGEMath::Quaternion newOrientation;
 
-		friend class YGEGraphicsCore;
 	YGEMath::Quaternion interpolatedOrientation;
 
 

@@ -91,7 +91,7 @@ public:
 	/**
 	 * @return the path of a file with appended resource location
 	 */
-	std::string YGEResourceManager::absoluteFilename(const char* filename);
+	std::string absoluteFilename(const char* filename);
 
 	/**
 	 * set the resource location
