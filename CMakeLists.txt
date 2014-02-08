@@ -22,39 +22,39 @@ SET( src_files
   src/Template.cpp
   src/YGEGraphicsContext.cpp
   src/YGEEntity.cpp
-#  src/YGESimpleSphere.cpp
-#  src/YGEScene.cpp
-#  src/YGEHeightmap.cpp
-#  src/YGEConsole.cpp
-#  src/YGETimer.cpp
-#  src/YGEEngineCoreMultiThreaded.cpp
-#  src/YGEBodyAsset.cpp
-#  src/YGEEntityAsset.cpp
-#  src/YGESunlight.cpp
-#  src/YGEText.cpp
-#  src/YGEObserver.cpp
-#  src/YGEEngineCoreSingleThreaded.cpp
-#  src/YGEStaticMesh.cpp
-#  src/YGEAudioCore.cpp
-#  src/YGESkybox.cpp
-#  src/YGEGraphicsCore.cpp
-#  src/YGESoundAsset.cpp
-#  src/YGEQuaternion.cpp
-#  src/YGEVector2.cpp
-#  src/YGELogger.cpp
-#  src/YGEPrimitives.cpp
-#  src/YGETexture.cpp
-#  src/YGEResourceManager.cpp
-#  src/YGEWater.cpp
-#  src/YGEVector3.cpp
-#  src/YGEParticleSystem.cpp
-#  src/YGEVbo.cpp
-#  src/YGEInputManager.cpp
-#  src/YGEEngineCore.cpp
-#  src/YGESimpleHullAsset.cpp
-#  src/YGESpace.cpp
-#  src/stdafx.cpp
-#  src/YGESimpleBox.cpp
+  src/YGESimpleSphere.cpp
+  src/YGEScene.cpp
+  src/YGEHeightmap.cpp
+  src/YGEConsole.cpp
+  src/YGETimer.cpp
+  src/YGEEngineCoreMultiThreaded.cpp
+  src/YGEBodyAsset.cpp
+  src/YGEEntityAsset.cpp
+  src/YGESunlight.cpp
+  src/YGEText.cpp
+  src/YGEObserver.cpp
+  src/YGEEngineCoreSingleThreaded.cpp
+  src/YGEStaticMesh.cpp
+  src/YGEAudioCore.cpp
+  src/YGESkybox.cpp
+  src/YGEGraphicsCore.cpp
+  src/YGESoundAsset.cpp
+  src/YGEQuaternion.cpp
+  src/YGEVector2.cpp
+  src/YGELogger.cpp
+  src/YGEPrimitives.cpp
+  src/YGETexture.cpp
+  src/YGEResourceManager.cpp
+  src/YGEWater.cpp
+  src/YGEVector3.cpp
+  src/YGEParticleSystem.cpp
+  src/YGEVbo.cpp
+  src/YGEInputManager.cpp
+  src/YGEEngineCore.cpp
+  src/YGESimpleHullAsset.cpp
+  src/YGESpace.cpp
+  src/stdafx.cpp
+  src/YGESimpleBox.cpp
 )
 
 INCLUDE_DIRECTORIES(

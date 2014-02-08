@@ -86,7 +86,7 @@ namespace YGEPhysics {
 if(hasBody) {
 			YGEMath::Quaternion q = parent->getOrientation();
 
-			const double* v = dBodyGetLinearVel(bodyId);
+			const dReal* v = dBodyGetLinearVel(bodyId);
 
 			YGEMath::Vector3 z(v[0],v[1],v[2]);
 

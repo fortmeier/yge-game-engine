@@ -15,9 +15,15 @@
 
 
 #include "YGEVector.h"
-#include "YGESpace.h"
 
 #include <map>
+
+// forward declarations
+namespace YGETimeSpace {
+  class YGEEntity;
+  class YGESpace;
+  class YGEObserver;
+}
 
 namespace YGEAudio {
 

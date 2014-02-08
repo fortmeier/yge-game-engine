@@ -1,7 +1,7 @@
 #include "YGEAudioCore.h"
 #include "YGEObserver.h"
+#include "YGESpace.h"
 
-#define NULL 0
 
 namespace YGEAudio {
 	void YGEAudioCore::renderSpace(YGETimeSpace::YGESpace* space, YGETimeSpace::YGEObserver* observer){
