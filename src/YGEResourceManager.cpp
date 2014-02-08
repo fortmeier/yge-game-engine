@@ -8,14 +8,14 @@
 namespace YGECore {
 
 	YGEResourceManager::YGEResourceManager(){
-		resourceLocation = "../media/";
+		resourceLocation = "./media/";
 
 	}
 
 	SDL_Surface* YGEResourceManager::getSurface(const char *filename){
 
 		std::ostringstream s;
-		s << "../media/" << filename;
+		s << absoluteFilename(filename);
 
 		SDL_Surface* surface;
 		surface = SDL_LoadBMP(s.str().c_str());

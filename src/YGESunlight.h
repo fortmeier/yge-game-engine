@@ -19,7 +19,7 @@ private:
 
 	YGEMath::Vector3 direction;
 public:
-	void setDirection(YGEMath::Vector3 &dir){
+	void setDirection(const YGEMath::Vector3 &dir){
 		direction = dir;
 	}
 

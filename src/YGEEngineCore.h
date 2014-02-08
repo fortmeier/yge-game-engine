@@ -84,7 +84,7 @@ space->getRootEntity()->addChild(textPos);
 
 
 // register a font so it can be used
-YGEGraphics::YGEText::registerFont("VeraMono24", "../media/fonts/VeraMono.ttf", 24);
+YGEGraphics::YGEText::registerFont("VeraMono24", "fonts/VeraMono.ttf", 24);
 
 // create an actual text
 YGEGraphics::YGEText* text = new YGEGraphics::YGEText("Hello World", "VeraMono24");

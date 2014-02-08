@@ -1,5 +1,6 @@
 #include "YGEText.h"
 #include "YGEExceptions.h"
+#include "YGEResourceManager.h"
 
 
 using namespace std;
@@ -183,7 +184,9 @@ namespace YGEGraphics {
 
 	void YGEText::registerFont(const char* fontname, const char* filename, int s){
 		TTF_Font* font;
-		font = TTF_OpenFont(filename, s);
+		std::string filenameString;
+		filenameString = YGECore::YGEResourceManager::getInstance()->absoluteFilename(filename);
+		font = TTF_OpenFont(filenameString.c_str(), s);
 		if (font == NULL){
 			YGEExceptionFileNotFound(std::string(TTF_GetError()));
 
@@ -193,7 +196,7 @@ namespace YGEGraphics {
 
 
 	void YGEText::init(){
-		registerFont("VeraMono12", "../media/fonts/VeraMono.ttf", 12);
+		registerFont("VeraMono12", "fonts/VeraMono.ttf", 12);
 	}
 
 	TTF_Font* YGEText::getFont(const char* fontname){

@@ -25,7 +25,7 @@ namespace YGETimeSpace {
 #ifdef _DEBUG
 #define FULLSCREEN false
 #else
-#define FULLSCREEN true
+#define FULLSCREEN false
 #endif
 
 namespace YGEGraphics {

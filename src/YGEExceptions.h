@@ -12,6 +12,7 @@
 
 #include <exception>
 #include <string>
+#include <sstream>
 
 
 class YGEExceptionFileNotFound : public std::exception {
@@ -25,7 +26,9 @@ public:
         
 	~YGEExceptionFileNotFound() throw() {} 
 	virtual const char* what() const throw() {
-		return "FileNotFound!";
+		std::stringstream s;
+		s << "File not found: " << missingFile;
+		return s.str().c_str();
 	}
 };
 

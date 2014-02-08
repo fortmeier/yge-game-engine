@@ -107,16 +107,15 @@ namespace YGEGraphics {
 
 
 		// then extract the filename of the image
-		std::ostringstream s;
-		s<<"../media/"<<filename;
+		std::string s = YGECore::YGEResourceManager::getInstance()->absoluteFilename(filename);
 
-		int d = s.str().find_last_of("/\\");
-		std::string path = s.str().substr(0,d+1);
+		int d = s.find_last_of("/\\");
+		std::string path = s.substr(0,d+1);
 
 		std::ifstream is;
-		is.open(s.str().c_str());
+		is.open(s.c_str());
 		if(!is.is_open()) {
-			throw YGEExceptionFileNotFound(s.str());
+			throw YGEExceptionFileNotFound(s);
 			return;
 		}
 
