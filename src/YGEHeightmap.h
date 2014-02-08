@@ -51,7 +51,7 @@ public:
 	 a* creates a heightmap using a monocromatic texture.
 	 
 	 */
-	void create(const char *filename, const char* texturefilename, double width, double depth, double height);
+	void create(const char *filename, const char* texturefilename="images/moss.bmp", double width=512, double depth=512, double height=64);
 
 
 	/**

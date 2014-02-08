@@ -4,8 +4,8 @@
 * @date 19.11.2009
 */
 
-#ifndef _YGE_MASS_ASSET_H_
-#define _YGE_MASS_ASSET_H_
+#ifndef _YGE_BODY_ASSET_H_
+#define _YGE_BODY_ASSET_H_
 
 #include "YGEPhysicsAsset.h"
 #include "YGEVector.h"

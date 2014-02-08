@@ -61,8 +61,8 @@ namespace YGEGame {
 		* by the YGEEngineCore and invokes the YGEAudioCore and the
 		* YGEGraphicsCore to render it.
 		*/
-		virtual YGETimeSpace::YGESceneList* getScenesToRender() {
-			return &sceneList;
+		virtual YGETimeSpace::YGESceneList& getScenesToRender() {
+			return sceneList;
 		};
 
 		/**
@@ -72,8 +72,8 @@ namespace YGEGame {
 		* Afterwards, the position of the YGETimeSpace::YGEEntity s in the spaces
 		* are updated and absolute poses of the YGETimeSpace::YGEEntity are calculated.
 		*/
-		virtual YGETimeSpace::YGESpaceList* getSpacesToUpdate() {
-			return &spaceList;
+		virtual YGETimeSpace::YGESpaceList& getSpacesToUpdate() {
+			return spaceList;
 		};
 
 		/**

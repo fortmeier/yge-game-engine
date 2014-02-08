@@ -213,12 +213,12 @@ namespace YGECore {
 	void YGEEngineCoreSingleThreaded::update(){
 		timerUpdate->startTimer();
 
-		for(YGETimeSpace::YGESpaceList::iterator iter = gamestate->getSpacesToUpdate()->begin(); iter != gamestate->getSpacesToUpdate()->end(); iter++){
+		for(YGETimeSpace::YGESpaceList::iterator iter = gamestate->getSpacesToUpdate().begin(); iter != gamestate->getSpacesToUpdate().end(); iter++){
 			(*iter)->getRootEntity()->setTimeOfNewPosition(getTimeSinceGameStarted());
 		}
 
 
-		for(YGETimeSpace::YGESpaceList::iterator iter = gamestate->getSpacesToUpdate()->begin(); iter != gamestate->getSpacesToUpdate()->end(); iter++){
+		for(YGETimeSpace::YGESpaceList::iterator iter = gamestate->getSpacesToUpdate().begin(); iter != gamestate->getSpacesToUpdate().end(); iter++){
 
 			(*iter)->getRootEntity()->update((long)delta);
 		}
@@ -227,7 +227,7 @@ namespace YGECore {
 	}
 
 	void YGEEngineCoreSingleThreaded::updateAbsolutePositions(){
-		for(YGETimeSpace::YGESceneList::iterator iter = gamestate->getScenesToRender()->begin(); iter != gamestate->getScenesToRender()->end(); iter++){
+		for(YGETimeSpace::YGESceneList::iterator iter = gamestate->getScenesToRender().begin(); iter != gamestate->getScenesToRender().end(); iter++){
 
 			(*iter).first->getRootEntity()->updateAbsolutePosition(YGEMath::Vector3(), YGEMath::Quaternion());
 		}
@@ -236,7 +236,7 @@ namespace YGECore {
 
 	void YGEEngineCoreSingleThreaded::calcPhysics(long long deltaPhysics){
 		timerPhysics->startTimer();
-		for(YGETimeSpace::YGESpaceList::iterator iter = gamestate->getSpacesToUpdate()->begin(); iter != gamestate->getSpacesToUpdate()->end(); iter++){
+		for(YGETimeSpace::YGESpaceList::iterator iter = gamestate->getSpacesToUpdate().begin(); iter != gamestate->getSpacesToUpdate().end(); iter++){
 
 			(*iter)->timeStep(deltaPhysics);
 		}
@@ -246,7 +246,7 @@ namespace YGECore {
 
 	void YGEEngineCoreSingleThreaded::tick(){
 		timerTick->startTimer();
-		for(YGETimeSpace::YGESpaceList::iterator iter = gamestate->getSpacesToUpdate()->begin(); iter != gamestate->getSpacesToUpdate()->end(); iter++){
+		for(YGETimeSpace::YGESpaceList::iterator iter = gamestate->getSpacesToUpdate().begin(); iter != gamestate->getSpacesToUpdate().end(); iter++){
 
 			if( (*iter)->getTimeIsRunning() ) {
 				(*iter)->getRootEntity()->tickChildren((long)delta);
@@ -257,7 +257,7 @@ namespace YGECore {
 
 	}
 	void YGEEngineCoreSingleThreaded::interpolate(){
-		for(YGETimeSpace::YGESceneList::iterator iter = gamestate->getScenesToRender()->begin(); iter != gamestate->getScenesToRender()->end(); iter++){
+		for(YGETimeSpace::YGESceneList::iterator iter = gamestate->getScenesToRender().begin(); iter != gamestate->getScenesToRender().end(); iter++){
 
 			// before drawing a new scene, interpolate the positions
 			(*iter).first->getRootEntity()->interpolate(getTimeSinceGameStarted());
@@ -268,7 +268,7 @@ namespace YGECore {
 
 		timerGraphics->startTimer();
 
-		for(YGETimeSpace::YGESceneList::iterator iter = gamestate->getScenesToRender()->begin(); iter != gamestate->getScenesToRender()->end(); iter++){
+		for(YGETimeSpace::YGESceneList::iterator iter = gamestate->getScenesToRender().begin(); iter != gamestate->getScenesToRender().end(); iter++){
 
 
 			YGEAudio::YGEAudioCore::getInstance()->renderSpace( (*iter).first, (*iter).second );
