@@ -54,12 +54,17 @@ namespace YGECore {
 		}
 
 		void log(const char* message){
-#ifdef _DEBUG
 			SDL_mutexP(mutex);
 			std::cout<<message<<std::endl;
 			SDL_mutexV(mutex);
-#endif
 		}
+
+		template<typename T>
+                YGELogger& operator<<(const T& input){
+			std::cout << input;
+			return *this;
+		}
+
 
 		void logToConsole(const char* message){
 			SDL_mutexP(mutex);
@@ -97,5 +102,7 @@ namespace YGECore {
 	};
 
 }
+
+#define LOGGER *(YGECore::YGELogger::getInstance())
 
 #endif

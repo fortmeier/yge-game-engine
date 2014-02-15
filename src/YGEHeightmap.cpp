@@ -43,7 +43,7 @@ namespace YGEGraphics {
 	void YGEHeightmap::create(const char *filename, const char* texturefilename, double width, double depth, double height){
 
 
-
+		LOGGER << "Creating a heightmap: " << filename << " \n";
 		// get texture
 		SDL_Surface* surface = 
 			YGECore::YGEResourceManager::getInstance()->getSurface(filename);
