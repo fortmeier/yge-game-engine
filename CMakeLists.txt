@@ -59,7 +59,7 @@ SET( src_files
 
 INCLUDE_DIRECTORIES(
   ${SDL_INCLUDE_DIR}
-  ${OPENAL_DIR}
+  ${OPENAL_INCLUDE_DIR}
 )
 
 add_library( yge ${src_files})
