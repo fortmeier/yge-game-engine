@@ -64,6 +64,15 @@ INCLUDE_DIRECTORIES(
 
 ADD_LIBRARY( yge ${src_files})
 
+SET( YGE_REQUIRED_LIBS
+  SDL
+  SDL_ttf
+  GL
+  GLU
+  glee
+  ode
+  alut
+)
 
 # TESTING
 OPTION( Testing "Build and run unit tests" OFF )
