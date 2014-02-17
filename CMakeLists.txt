@@ -62,4 +62,14 @@ INCLUDE_DIRECTORIES(
   ${OPENAL_INCLUDE_DIR}
 )
 
-add_library( yge ${src_files})
+ADD_LIBRARY( yge ${src_files})
+
+
+# TESTING
+OPTION( Testing "Build and run unit tests" OFF )
+IF(Testing)
+  ENABLE_TESTING()
+  ADD_SUBDIRECTORY( test )
+ENDIF()
+
+
