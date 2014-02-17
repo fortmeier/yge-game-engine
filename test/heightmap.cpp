@@ -15,13 +15,13 @@ TEST( Heightmap, create ){
 
 
 TEST( Heightmap, makeSolid ){
-  YGEGraphics::YGEHeightmap map;
   YGETimeSpace::YGESpace space;
   space.initTime();
 
-  map.create("hmap64x64.bmp", "ground.bmp");
+  YGEGraphics::YGEHeightmap* map = new YGEGraphics::YGEHeightmap();
+  map->create("hmap64x64.bmp", "ground.bmp");
   
-  space.getRootEntity()->addAsset( &map );
+  space.getRootEntity()->addAsset( map );
 
-  map.makeSolid();
+  map->makeSolid();
 }

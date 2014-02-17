@@ -51,6 +51,8 @@ namespace YGEGraphics {
 		w = surface->w;
 		h = surface->h;
 
+		LOGGER << " ... with size: " << w << " x " << h << "\n";
+
 		scalex = width / w;
 		scalez = depth / h;
 		scaley = height / 256.0f;
@@ -173,6 +175,8 @@ namespace YGEGraphics {
 
 		SDL_FreeSurface(surface);
 
+		LOGGER << " ... done creating Heightmap \n";
+
 	}
 
 	void YGEHeightmap::draw(YGEGraphicsContext *context){
@@ -227,23 +231,21 @@ glFogi(GL_FOG_MODE, GL_LINEAR);
 	void YGEHeightmap::makeSolid(){
 		YGETimeSpace::YGESpace* parentSpace = parent->getSpace();
 		if(parentSpace != NULL){
-
-
-
 			//@todo check if space has time not enabled
+			LOGGER << "test: " << w << " x " << h << " \n";
 
-
-
-
+LOGGER << "drealsize: " << sizeof(dReal) << " \n";
 			heightfieldId = dGeomHeightfieldDataCreate ();
 			dGeomHeightfieldDataBuildDouble (heightfieldId,
 				pHeightData,
 				true,
 				w * scalex, h * scalez,
-				w, h,
+				5, 5,
 				1, 0, 5, 0);
 
 			dGeomID geom = dCreateHeightfield( parentSpace->getDSpaceId(), heightfieldId, false);
+
+
 			dGeomSetCategoryBits(geom,YGEPhysics::STATIC_OBJECTS );
 			dGeomSetCollideBits(geom, YGEPhysics::ENTITIES );
 

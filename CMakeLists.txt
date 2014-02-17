@@ -16,6 +16,10 @@ FIND_LIBRARY(ODE_LIBRARY
    /usr/local/lib
 )
 
+ADD_DEFINITIONS(
+ -DdDOUBLE
+)
+
 SET( src_files
   src/YGESkybox.cpp
   src/YGESound.cpp
